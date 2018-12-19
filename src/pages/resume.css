@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'C540';
+    src: url('../assets/fonts/Quicksand-Regular.eot');
+    src: url('../assets/fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Quicksand-Regular.woff') format('woff'),
+    url('../assets/fonts/Quicksand-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'C540';
+    src: url('../assets/fonts/Quicksand-Italic.eot');
+    src: url('../assets/fonts/Quicksand-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Quicksand-Italic.woff') format('woff'),
+    url('../assets/fonts/Quicksand-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'C540';
+    src: url('../assets/fonts/Quicksand-Light.eot');
+    src: url('../assets/fonts/Quicksand-Light.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Quicksand-Light.woff') format('woff'),
+    url('../assets/fonts/Quicksand-Light.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'C540';
+    src: url('../assets/fonts/Quicksand-LightItalic.eot');
+    src: url('../assets/fonts/Quicksand-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Quicksand-LightItalic.woff') format('woff'),
+    url('../assets/fonts/Quicksand-LightItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+body {
+    margin: 0px;
+    background-color: #ffffff;
+    font-family: "C540", serif;
+    color: black;
+    font-size: larger;
+}
+h1 small {
+    color: #999;
+    display: block;
+    font-size: 0.5em;
+}
+
+h1, h2, h3, h4 {
+    padding-left: 30px;
+}
+
+.content {
+    background-color: #fafafa;
+    max-width: 800px;
+    margin: 0;
+    padding: 50px 100px 50px 50px;
+    border-right: 1px solid #efefef;
+}
+.synopsis, .position, .internship, .education, .publications, .conferences {
+    margin-bottom: 25px;
+    margin-left: -40px;
+    padding-left: 70px;
+}
+
+.synopsis {
+    border-top: 2px solid purple;
+}
+.position {
+    border-top: 2px solid red;
+}
+
+.internship {
+    border-top: 2px solid orange;
+}
+
+.education {
+    border-top: 2px solid green;
+}
+
+.conferences {
+    border-top: 2px solid cornflowerblue;
+}
+
+.publications {
+    border-top: 2px solid navy;
+}
+
+
+.title {
+    display: block;
+    margin-top: -10px;
+    margin-left: -10px;
+    padding-left: 10px;
+    background-color: #fafafa;
+}
+.supplemental {
+    display: block;
+    font-style: italic;
+}
+.time-period {
+    display: block;
+    font-size: smaller;
+    color: #999;
+}
