@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'C540';
+    font-family: 'Quicksand';
     src: url('../assets/fonts/Quicksand-Regular.eot');
     src: url('../assets/fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
     url('../assets/fonts/Quicksand-Regular.woff') format('woff'),
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: 'C540';
+    font-family: 'Quicksand';
     src: url('../assets/fonts/Quicksand-Italic.eot');
     src: url('../assets/fonts/Quicksand-Italic.eot?#iefix') format('embedded-opentype'),
     url('../assets/fonts/Quicksand-Italic.woff') format('woff'),
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-    font-family: 'C540';
+    font-family: 'Quicksand';
     src: url('../assets/fonts/Quicksand-Light.eot');
     src: url('../assets/fonts/Quicksand-Light.eot?#iefix') format('embedded-opentype'),
     url('../assets/fonts/Quicksand-Light.woff') format('woff'),
@@ -29,7 +29,7 @@
 }
 
 @font-face {
-    font-family: 'C540';
+    font-family: 'Quicksand';
     src: url('../assets/fonts/Quicksand-LightItalic.eot');
     src: url('../assets/fonts/Quicksand-LightItalic.eot?#iefix') format('embedded-opentype'),
     url('../assets/fonts/Quicksand-LightItalic.woff') format('woff'),
@@ -41,7 +41,7 @@
 body {
     margin: 0px;
     background-color: #ffffff;
-    font-family: "C540", serif;
+    font-family: "Quicksand", serif;
     color: black;
     font-size: larger;
 }
