@@ -19,14 +19,14 @@ const Avatar = () => (
       query {
         placeholderImage: file(relativePath: { eq: "avatar.png" }) {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 330) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `}
-    render={data => <Img style={{ maxWidth: 450, maxHeight: 450, borderRadius: '20%' }}
+    render={data => <Img style={{ maxWidth: 328, maxHeight: 328, borderRadius: '20%' }}
       fluid={data.placeholderImage.childImageSharp.fluid}/>}
   />
 )

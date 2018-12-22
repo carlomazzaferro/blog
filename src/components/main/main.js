@@ -1,22 +1,17 @@
 import React, { PureComponent } from 'react'
-import { Avatar, Card, Col, Divider, Row, Tag } from 'antd'
+import { Card, Col, Divider, Row, Tag } from 'antd'
 import GridContent from '../grid/GridContent'
 import './main.less'
-import { currUser, noticesData } from '../../mocks'
+import { currUser } from '../../mocks'
+import { copyright } from '../../consts/footer'
 import Articles from '../../components/articles'
 import Projects from '../../components/projects/projects'
 import Technologies from '../../components/technologies/technologies'
-
-// @connect(({ loading, user, project }) => ({
-//   listLoading: loading.effects['list/fetch'],
-//   currentUser: user.currentUser,
-//   currentUserLoading: loading.effects['user/fetchCurrent'],
-//   project,
-//   projectLoading: loading.effects['project/fetchNotice'],
-// }))
+import { avatars } from '../../consts/social'
+import { operationTabList } from '../../consts/nav'
+import GlobalFooter from '../footer/footer'
 
 const user = currUser()
-const notices = noticesData()
 
 class Center extends PureComponent {
   state = {
@@ -47,38 +42,12 @@ class Center extends PureComponent {
 
   render () {
     const { newTags } = this.state
-    const operationTabList = [
-      {
-        key: 'articles',
-        tab: (
-          <span>
-            Articles <span style={{ fontSize: 14 }}>(8)</span>
-          </span>
-        ),
-      },
-      {
-        key: 'applications',
-        tab: (
-          <span>
-            Technologies <span style={{ fontSize: 14 }}>(8)</span>
-          </span>
-        ),
-      },
-      {
-        key: 'projects',
-        tab: (
-          <span>
-            Projects <span style={{ fontSize: 14 }}>(8)</span>
-          </span>
-        ),
-      },
-    ]
 
     return (
       <GridContent className="userCenter">
         <Row gutter={24}>
           <Col lg={7} md={24}>
-            <Card bordered={false} style={{ marginBottom: 24 }}>
+            <Card bordered={false} hoverable={false} style={{ margin: 24 }}>
               {user && Object.keys(user).length ? (
                 <div>
                   <div className="avatarHolder">
@@ -103,21 +72,24 @@ class Center extends PureComponent {
                   </div>
                   <Divider dashed/>
                   <div className="tags">
-                    <div className="tagsTitle">Labels</div>
+                    <div className="tagsTitle">Interests</div>
                     {user.tags.concat(newTags).map(item => (
                       <Tag key={item.key}>{item.label}</Tag>
                     ))}
                   </div>
                   <Divider style={{ marginTop: 16 }} dashed/>
                   <div className="team">
-                    <div className="teamTitle">Teams</div>
+                    <div className="teamTitle">Social</div>
                     <Row gutter={36}>
-                      {notices.map(item => (
-                        <Col key={item.id} lg={24} xl={12}>
-                          <Avatar size="small" src={item.logo}/>
-                          {item.member}
-                        </Col>
-                      ))}
+                      <Row style={{ marginLeft: 20 }} lg={24} xl={12}>
+                        {avatars().map(item => (
+                          <div key={item.id} style={{ width: 30, marginLeft: item.id === 1 ? 0 : 10, float: 'left' }}>
+                            <a style={{ lineHeight: '.8em' }} href={item.href}>
+                              {item.icon}
+                            </a>
+                          </div>
+                        ))}
+                      </Row>
                     </Row>
                   </div>
                 </div>
@@ -126,7 +98,8 @@ class Center extends PureComponent {
               )}
             </Card>
           </Col>
-          <Col lg={17} md={24}>
+          <Divider orientation='center' type='vertical' style={{ zIndex: 2, marginTop: 65, height: '100vh' }}/>
+          <Col lg={16} style={{ float: 'right', paddingLeft: 0 }}>
             <Card
               className="tabsCard"
               bordered={false}
@@ -138,6 +111,7 @@ class Center extends PureComponent {
             </Card>
           </Col>
         </Row>
+        <GlobalFooter copyright={copyright}/>
       </GridContent>
     )
   }
