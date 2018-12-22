@@ -1,59 +1,22 @@
-@font-face {
-    font-family: 'Quicksand';
-    src: url('../assets/fonts/Quicksand-Regular.eot');
-    src: url('../assets/fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Quicksand-Regular.woff') format('woff'),
-    url('../assets/fonts/Quicksand-Regular.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('../assets/fonts/Quicksand-Italic.eot');
-    src: url('../assets/fonts/Quicksand-Italic.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Quicksand-Italic.woff') format('woff'),
-    url('../assets/fonts/Quicksand-Italic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('../assets/fonts/Quicksand-Light.eot');
-    src: url('../assets/fonts/Quicksand-Light.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Quicksand-Light.woff') format('woff'),
-    url('../assets/fonts/Quicksand-Light.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Quicksand';
-    src: url('../assets/fonts/Quicksand-LightItalic.eot');
-    src: url('../assets/fonts/Quicksand-LightItalic.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Quicksand-LightItalic.woff') format('woff'),
-    url('../assets/fonts/Quicksand-LightItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
 
 body {
-    margin: 0px;
+    margin: 0;
     background-color: #ffffff;
     font-family: "Quicksand", serif;
     color: black;
     font-size: larger;
 }
-h1 small {
+
+.header_one small {
     color: #999;
     display: block;
     font-size: 0.5em;
 }
 
-h1, h2, h3, h4 {
+.header_three .header_one {
     padding-left: 30px;
 }
+
 
 .content {
     background-color: #fafafa;

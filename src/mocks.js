@@ -25,12 +25,12 @@ const titles = [
   'Webpack',
 ]
 const avatars = [
-  'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png', // Alipay
-  'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png', // Angular
-  'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png', // Ant Design
-  'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png', // Ant Design Pro
-  'https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png', // Bootstrap
-  'https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png', // React
+  'facebook', // Alipay
+  'github', // Angular
+  'linkedin', // Ant Design
+  'reddit', // Ant Design Pro
+  'sourcerer', // Bootstrap
+  'instagram', // React
   'https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png', // Vue
   'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png', // Webpack
 ]
@@ -67,7 +67,6 @@ const fakeList = count => {
   for (let i = 0; i < count; i += 1) {
     list.push({
       id: `fake-list-${ i }`,
-      owner: user[i % 10],
       title: titles[i % 8],
       avatar: avatars[i % 8],
       cover: parseInt(i / 4, 10) % 2 === 0 ? covers[i % 4] : covers[3 - (i % 4)],
@@ -188,27 +187,27 @@ const currUser = () => {
       tags: [
         {
           key: '0',
-          label: '很有想法的',
+          label: 'python',
         },
         {
           key: '1',
-          label: '专注设计',
+          label: 'machine learning',
         },
         {
           key: '2',
-          label: '辣~',
+          label: 'haskell',
         },
         {
           key: '3',
-          label: '大长腿',
+          label: 'react',
         },
         {
           key: '4',
-          label: '川妹子',
+          label: 'distributed systems',
         },
         {
           key: '5',
-          label: '海纳百川',
+          label: 'data viz',
         },
       ],
       notifyCount: 12,

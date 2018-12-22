@@ -6,7 +6,7 @@ const resume = () => (
   <div>
     <SEO title="resume"/>
     <div className='content'>
-      <h1>
+      <h1 className="header_one">
         Carlo Mazzaferro
         <small>A Résumé of Sorts</small>
       </h1>
@@ -17,7 +17,7 @@ const resume = () => (
         </span>
       </div>
 
-      <h3>Career History</h3>
+      <h3 className="header_three">Career History</h3>
 
       <div className='position'>
         <span className='title'>Machine Learning Engineer - ByteCubed</span>
@@ -40,7 +40,7 @@ const resume = () => (
         <span className='time-period'>February 2016 to June 2017</span>
       </div>
 
-      <h3>Internships</h3>
+      <h3 className="header_three">Internships</h3>
 
       <div className='internship'>
         <span className='title'>Application Developer Intern - UCSD Medical </span>
@@ -52,7 +52,7 @@ const resume = () => (
         <span className='time-period'>June 2014 to October 2014</span>
       </div>
 
-      <h3>Education</h3>
+      <h3 className="header_three">Education</h3>
 
       <div className='education'>
         <span className='title'>University of California, San Diego</span>
@@ -60,7 +60,7 @@ const resume = () => (
         <span className='time-period'>2012-2017</span>
       </div>
 
-      <h3>Conferences</h3>
+      <h3 className="header_three">Conferences</h3>
       <div className='conferences'>
         <span className='title'>PyData, Washington DC Oct 2018</span>
         <a href={'https://pydata.org/dc2018/schedule/presentation/10/'}>
@@ -68,7 +68,7 @@ const resume = () => (
         </a>
       </div>
 
-      <h3>Publications</h3>
+      <h3 className="header_three">Publications</h3>
 
       <div className='publications'>
         <a href={'https://github.com/ucsd-ccbb/VAPr'}>

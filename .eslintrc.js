@@ -5,7 +5,7 @@ module.exports = {
         "no-var": "error", // optional, recommended when using es6+
         "no-unused-vars": 1, // recommended
         "arrow-spacing": ["warn", { before: true, after: true }], // recommended
-        indent: ["error", 2],
+        indent: ["warn", 2],
         "comma-dangle": [
             "error",
             {
@@ -20,7 +20,7 @@ module.exports = {
         // options to emulate prettier setup
         semi: ["warn", "never"],
         "max-len": ["warn", { code: 180 }],
-        "template-curly-spacing": ["warn", "always"],
+        "template-curly-spacing": ["warn"],
         "arrow-parens": ["warn", "as-needed"],
 
         // standard.js
@@ -34,9 +34,9 @@ module.exports = {
         ],
 
         // standard plugin - options
-        "standard/object-curly-even-spacing": ["error", "either"],
-        "standard/array-bracket-even-spacing": ["error", "either"],
-        "standard/computed-property-even-spacing": ["error", "even"],
+        "standard/object-curly-even-spacing": ["warn"],
+        "standard/array-bracket-even-spacing": ["warn"],
+        "standard/computed-property-even-spacing": ["warn"],
         "standard/no-callback-literal": ["error", ["cb", "callback"]],
 
         // react plugin - options
