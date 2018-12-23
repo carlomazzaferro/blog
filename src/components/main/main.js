@@ -13,18 +13,32 @@ import GlobalFooter from '../footer/footer'
 
 const user = currUser()
 
+
 class Center extends PureComponent {
   state = {
     newTags: [],
     inputVisible: false,
     inputValue: '',
-    activeTab: 'articles'
+    activeTab: 'articles',
+    width: 0,
   }
 
   onTabChange = key => {
     this.setState({
       activeTab: key
     })
+  }
+  componentDidMount() {
+    this.handleWindowSizeChange() // Set width
+    window.addEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
   }
 
   renderTab = () => {
@@ -98,8 +112,8 @@ class Center extends PureComponent {
             </Card>
           </Col>
           <Divider orientation='center'
-            type={window.innerWidth > 740 ? 'vertical' : 'horizontal'}
-            className="main_divider"
+                   type={this.state.width > 740 ? 'vertical' : 'horizontal'}
+                   className="main_divider"
           />
           <Col lg={16} style={{ float: 'right', paddingLeft: 0 }}>
             <Card

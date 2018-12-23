@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Icon, List, Tag } from 'antd'
+import { List, Tag } from 'antd'
 import ArticleListContent from './content/Content'
 import './Articles.less'
 import Button from 'antd/es/button'
@@ -31,13 +31,11 @@ class Articles extends PureComponent {
   }
 
   render () {
-    console.log(maxArticles, this.state.count)
-    const IconText = ({ type, text }) => (
-      <span>
-        <Icon type={type} style={{ marginRight: 8 }}/>
-        {text}
-      </span>
-    )
+    // const IconText = ({ type, text }) => (
+    //   <span>
+    //     <Icon type={type} style={{ marginRight: 8 }}/>
+    //     {text}
+    //   </span>)
     return (
       <div>
         <List
