@@ -1,7 +1,6 @@
 import { Icon } from 'antd'
 import React from 'react'
-import { SourcererIcon } from '../images/sourcerer'
-import { RedditIcon } from '../images/reddit'
+import { RedditIcon, SourcererIcon } from '../images/index'
 import '../images/icons.less'
 
 export const avatars = () => {

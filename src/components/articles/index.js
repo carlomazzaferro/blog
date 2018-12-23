@@ -2,23 +2,23 @@ import React, { PureComponent } from 'react'
 import { Icon, List, Tag } from 'antd'
 import ArticleListContent from './content/Content'
 import './Articles.less'
-import { fakeList } from '../../mocks'
 import Button from 'antd/es/button'
+import { maxArticles, sortedBlurbs } from '../../consts/blurbs/index'
 
-const articleCount = 4
+const articleCount = 3
 
 class Articles extends PureComponent {
   state = {
-    initLoading: true,
-    loading: false,
+    count: articleCount,
     data: [],
     list: [],
   }
 
   componentDidMount () {
+    console.log(sortedBlurbs(10))
     this.setState({
       count: articleCount,
-      list: fakeList(articleCount),
+      list: sortedBlurbs(articleCount),
     })
   }
 
@@ -26,11 +26,12 @@ class Articles extends PureComponent {
     const ct = this.state.count + articleCount
     this.setState({
       count: ct,
-      list: fakeList(ct)
+      list: sortedBlurbs(ct)
     })
   }
 
   render () {
+    console.log(maxArticles, this.state.count)
     const IconText = ({ type, text }) => (
       <span>
         <Icon type={type} style={{ marginRight: 8 }}/>
@@ -49,11 +50,11 @@ class Articles extends PureComponent {
           renderItem={item => (
             <List.Item
               key={item.id}
-              actions={[
-                <IconText type="star-o" text={item.star}/>,
-                <IconText type="like-o" text={item.like}/>,
-                <IconText type="message" text={item.message}/>,
-              ]}
+              // actions={[
+              //   <IconText type="star-o" text={item.star}/>,
+              //   <IconText type="like-o" text={item.like}/>,
+              //   <IconText type="message" text={item.message}/>,
+              // ]}
             >
               <List.Item.Meta
                 title={
@@ -64,9 +65,9 @@ class Articles extends PureComponent {
                 }
                 description={
                   <span>
-                    <Tag>Ant Design</Tag>
-                    <Tag>设计语言</Tag>
-                    <Tag>蚂蚁金服</Tag>
+                    {item.tags.map(i => (
+                      <Tag> { i } </Tag>
+                    ))}
                   </span>
                 }
               />
@@ -80,7 +81,7 @@ class Articles extends PureComponent {
           textAlign: 'left', marginTop: 12, height: 32, lineHeight: '32px',
         }}
         >
-          <Button onClick={this.onLoadMore}> Load More </Button>
+          <Button disabled={this.state.count >= maxArticles} onClick={this.onLoadMore}> Load More </Button>
         </div>
       </div>
     )

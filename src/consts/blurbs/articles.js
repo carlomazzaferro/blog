@@ -1,9 +1,91 @@
+import icos from './ico'
+
+export const blurbs =
+  [
+    {
+      id: 1,
+      title: 'Neural Nets Applied to Protein Sequences: One-Hot Encoding and Recurrent Nets',
+      blurb: 'The application of neural networks to the problem of predicting how well proteins bind to the MHC-I complex. ' +
+        'This sort of interaction stands at the basis of the bodily immunogenic response and accurately characterizing it ' +
+        'could have significant impacts on the drug-development process.',
+      href: 'mazzafi.sh/articles/mhcPreds',
+      tags: ['Neural Networks', 'Deep Learning', 'Bioinformatics', 'Precision Medicine'],
+      updatedAt: new Date(2017, 2, 3),
+      createdAt: new Date(2017, 2, 3),
+      icons: [
+        { ...icos.python, id: 1 },
+        { ...icos.tensorflow, id: 2 },
+        { ...icos.numpy, id: 3 },
+        { ...icos.matplotlib, id: 4 },
+      ]
+    },
+    {
+      id: 2,
+      title: 'Real-Time EEG Classification Task',
+      blurb: 'Fun project developed with other five students at UCSD for the Senior Design Laboratory sequence for the ' +
+        'Bioengineering Biosystems major. This is just a brief summary of a much longer project proposal where I focus ' +
+        'more on the implementation part of our project rather than the (necessary, albeit dull) logistical and ' +
+        'motivational aspects of the project.',
+      href: 'mazzafi.sh/articles/bmes_one',
+      tags: ['Bioengineering', 'Psychology', 'Statistics'],
+      updatedAt: new Date(2016, 11, 3),
+      createdAt: new Date(2016, 11, 3),
+      icons: [
+        { ...icos.python, id: 1 },
+        { ...icos.tensorflow, id: 2 },
+      ]
+    },
+    {
+      id: 3,
+      title: 'Wearable Monitoring Device For Future Applications As An Assistive Technology',
+      blurb: 'Project developed with the Biomedical Engineering Society at UCSD.',
+      href: 'mazzafi.sh/articles/bmes_one',
+      tags: ['Bioengineering', 'Psychology', 'Statistics'],
+      updatedAt: new Date(2015, 7, 11),
+      createdAt: new Date(2015, 7, 11),
+      icons: [
+        { ...icos.numpy, id: 1 },
+        { ...icos.python, id: 2 },
+        { ...icos.opencv, id: 3 },
+      ]
+    },
+    {
+      id: 4,
+      title: 'Increasing cessation or prolonging the urge?',
+      blurb: 'Differences in marketing features in nicotine replacement ' +
+        'product advertisements. The impact of nicotine replacement therapeutics (NRT) on quitting success in the US ' +
+        'population remains unclear. Understanding of advertising messages and product features is needed to better ' +
+        'understand the impact of cessation products on quitting in the US.',
+      href: 'mazzafi.sh/articles/acsm_one',
+      tags: ['Bioengineering', 'Psychology', 'Statistics'],
+      updatedAt: new Date(2014, 6, 15),
+      createdAt: new Date(2014, 6, 15),
+      icons: [
+        { ...icos.r, id: 1 },
+        { ...icos.d3, id: 2 },
+        { ...icos.matplotlib, id: 3 },
+      ]
+    },
+    {
+      id: 5,
+      title: 'Relationship Between Tobacco Smoking Curiosity and Levels of Physical Activity and Sedentary Behavior in Adolescence',
+      blurb: 'Low physical activity (PA), sedentary behavior (SB), and tobacco use are three behavioral risk factors ' +
+        'linked to poor long-term health outcomes, and they tend to cluster together in individuals. Expressing any curiosity about smoking predicts future risk of tobacco use among adolescents who have never smoked.',
+      href: 'mazzafi.sh/articles/acsm_two',
+      tags: ['Bioengineering', 'Psychology', 'Statistics'],
+      updatedAt: new Date(2014, 9, 11),
+      createdAt: new Date(2014, 9, 11),
+      icons: [
+        { ...icos.numpy, id: 1 }
+      ]
+    },
+  ]
 
 const fakeList = count => {
   const list = []
   for (let i = 0; i < count; i += 1) {
     list.push({
-      id: `fake-list-${ i }`,
+      id: `fake-list-${i}`,
       owner: user[i % 10],
       title: titles[i % 8],
       avatar: avatars[i % 8],

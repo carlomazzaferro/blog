@@ -35,6 +35,7 @@ const Sourcerer = () => (
   </svg>
 )
 
-export const SourcererIcon = props => (
+let SourcererIcon
+export default SourcererIcon = props => (
   <Icon className='custom_icon' component={Sourcerer} {...props} />
 )

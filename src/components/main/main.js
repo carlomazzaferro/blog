@@ -29,20 +29,19 @@ class Center extends PureComponent {
 
   renderTab = () => {
     switch (this.state.activeTab) {
-    case 'articles':
-      return <Articles/>
-    case 'applications':
-      return <Technologies/>
-    case 'projects':
-      return <Projects/>
-    default:
-      return <Articles/>
+      case 'articles':
+        return <Articles/>
+      case 'applications':
+        return <Technologies/>
+      case 'projects':
+        return <Projects/>
+      default:
+        return <Articles/>
     }
   }
 
   render () {
     const { newTags } = this.state
-
     return (
       <GridContent className="userCenter">
         <Row gutter={24}>
@@ -98,7 +97,10 @@ class Center extends PureComponent {
               )}
             </Card>
           </Col>
-          <Divider orientation='center' type='vertical' style={{ zIndex: 2, marginTop: 65, height: '100vh' }}/>
+          <Divider orientation='center'
+            type={window.innerWidth > 740 ? 'vertical' : 'horizontal'}
+            className="main_divider"
+          />
           <Col lg={16} style={{ float: 'right', paddingLeft: 0 }}>
             <Card
               className="tabsCard"

@@ -14,6 +14,7 @@ const Reddit = () => (
       opacity="0.65" fill="#00000" className="custom_icon" p-id="1137"/>
   </svg>)
 
-export const RedditIcon = props => (
+let RedditIcon
+export default RedditIcon = props => (
   <Icon component={Reddit} {...props} />
 )

@@ -23,6 +23,20 @@ div.gatsby-image-wrapper {
   }
 }
 
+
+.main_divider {
+  z-index: 2;
+  margin-top: 65px;
+  height: 100vh;
+
+  @media screen and (max-width: 740px) {
+    margin-top: 20px;
+    height: 1px;
+  }
+}
+
+
+
 .detail {
 
   p {
@@ -94,9 +108,16 @@ div.gatsby-image-wrapper {
 
 .tabsCard {
   width: 70%;
+  @media screen and (max-width: 740px) {
+    width: 90%;
+    margin: auto;
+
+  }
+
   :global {
     .ant-card-head {
       margin-top: 50px;
     }
   }
+
 }
