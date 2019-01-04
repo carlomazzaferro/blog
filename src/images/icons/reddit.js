@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from 'antd'
-import './icons.less'
+import '../icons.less'
 
 const Reddit = () => (
   <svg viewBox="0 0 1024 1024" version="1.1"

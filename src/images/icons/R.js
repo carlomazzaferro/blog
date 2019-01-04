@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from 'antd'
-import './icons.less'
+import '../icons.less'
 
 const RLang = () => (
 <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="25" height="25" viewBox="0 0 724 561">

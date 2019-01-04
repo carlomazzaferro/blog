@@ -1,5 +1,5 @@
 import React from 'react'
-import './icons.less'
+import '../icons.less'
 import { Icon } from 'antd'
 
 export const ReactSvg = () => (
