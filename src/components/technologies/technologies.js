@@ -1,16 +1,37 @@
 import React, { PureComponent } from 'react'
-import { Avatar, Card, Dropdown, Icon, List, Menu, Tooltip } from 'antd'
-import { formatWan } from '../utils/utils'
+import { Card, List, Menu } from 'antd'
 import './technologies.less'
-import { fakeList } from '../../mocks'
+import { technologies } from '../../consts/tech/technologies'
+import Button from 'antd/es/button'
+
+const articleCount = 9
+const allArts = technologies.sort((a, b) => a.LOC - b.LOC).reverse()
+const maxArticles = allArts.length
 
 // @connect(({ list }) => ({
 //   list,
 // }))
 
-const list = fakeList(14)
-
 class Technologies extends PureComponent {
+  state = {
+    count: articleCount,
+    list: [],
+  }
+
+  componentDidMount () {
+    this.setState({
+      count: articleCount,
+      list: allArts.slice(0, articleCount),
+    })
+  }
+
+  onLoadMore = () => {
+    const ct = this.state.count + 3
+    this.setState({
+      count: ct,
+      list: allArts.slice(0, ct)
+    })
+  }
   render () {
     const itemMenu = (
       <Menu>
@@ -31,55 +52,64 @@ class Technologies extends PureComponent {
         </Menu.Item>
       </Menu>
     )
-    const CardInfo = ({ activeUser, newUser }) => (
+    const CardInfo = ({ commits, loc }) => (
       <div className='cardInfo'>
         <div>
-          <p>活跃用户</p>
-          <p>{activeUser}</p>
+          <p>Commits</p>
+          <p>{commits}</p>
         </div>
         <div>
-          <p>新增用户</p>
-          <p>{newUser}</p>
+          <p>Lines of Code</p>
+          <p>{loc}</p>
         </div>
       </div>
     )
     return (
-      <List
-        rowKey="id"
-        className='filterCardList'
-        grid={{ gutter: 24, xxl: 3, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }}
-        dataSource={list}
-        renderItem={item => (
-          <List.Item key={item.id}>
-            <Card
-              hoverable
-              bodyStyle={{ paddingBottom: 20 }}
-              actions={[
-                <Tooltip title="Download">
-                  <Icon type="download"/>
-                </Tooltip>,
-                <Tooltip title="编辑">
-                  <Icon type="edit"/>
-                </Tooltip>,
-                <Tooltip title="Share">
-                  <Icon type="share-alt"/>
-                </Tooltip>,
-                <Dropdown overlay={itemMenu}>
-                  <Icon type="ellipsis"/>
-                </Dropdown>,
-              ]}
-            >
-              <Card.Meta avatar={<Avatar size="small" src={item.avatar}/>} title={item.title}/>
-              <div className='cardItemContent'>
-                <CardInfo
-                  activeUser={formatWan(item.activeUser)}
-                  newUser={item.newUser}
+      <div>
+        <List
+          rowKey="id"
+          className='filterCardList'
+          grid={{ gutter: 24, xxl: 3, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }}
+          dataSource={this.state.list}
+          renderItem={item => (
+            <List.Item key={item.id}>
+              <Card
+                hoverable
+                bodyStyle={{ paddingBottom: 20 }}
+                // actions={[
+                //   <Tooltip title="Download">
+                //     <Icon type="download"/>
+                //   </Tooltip>,
+                //   <Tooltip title="编辑">
+                //     <Icon type="edit"/>
+                //   </Tooltip>,
+                //   <Tooltip title="Share">
+                //     <Icon type="share-alt"/>
+                //   </Tooltip>,
+                //   <Dropdown overlay={itemMenu}>
+                //     <Icon type="ellipsis"/>
+                //   </Dropdown>,
+                // ]}
+              >
+                <Card.Meta avatar={item.i} title={item.name}
                 />
-              </div>
-            </Card>
-          </List.Item>
-        )}
-      />
+                <div className='cardItemContent'>
+                  <CardInfo
+                    commits={item.commits}
+                    loc={item.LOC}
+                  />
+                </div>
+              </Card>
+            </List.Item>
+          )}
+        />
+        <div style={{
+          textAlign: 'left', marginTop: 24, height: 32, lineHeight: '32px',
+        }}
+        >
+          <Button disabled={this.state.count >= maxArticles} onClick={this.onLoadMore}> Load More </Button>
+        </div>
+      </div>
     )
   }
 }

@@ -11,10 +11,7 @@ import { avatars } from '../../consts/social'
 import { operationTabList } from '../../consts/nav'
 import GlobalFooter from '../footer/footer'
 
-const user = currUser()
-
-
-class Center extends PureComponent {
+class MainContent extends PureComponent {
   state = {
     newTags: [],
     inputVisible: false,
@@ -28,12 +25,12 @@ class Center extends PureComponent {
       activeTab: key
     })
   }
-  componentDidMount() {
+  componentDidMount () {
     this.handleWindowSizeChange() // Set width
     window.addEventListener('resize', this.handleWindowSizeChange)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('resize', this.handleWindowSizeChange)
   }
 
@@ -43,14 +40,14 @@ class Center extends PureComponent {
 
   renderTab = () => {
     switch (this.state.activeTab) {
-      case 'articles':
-        return <Articles/>
-      case 'applications':
-        return <Technologies/>
-      case 'projects':
-        return <Projects/>
-      default:
-        return <Articles/>
+    case 'articles':
+      return <Articles/>
+    case 'applications':
+      return <Technologies/>
+    case 'projects':
+      return <Projects/>
+    default:
+      return <Articles/>
     }
   }
 
@@ -61,32 +58,32 @@ class Center extends PureComponent {
         <Row gutter={24}>
           <Col lg={7} md={24}>
             <Card bordered={false} hoverable={false} style={{ margin: 24 }}>
-              {user && Object.keys(user).length ? (
+              {currUser && Object.keys(currUser).length ? (
                 <div>
                   <div className="avatarHolder">
-                    {user.avatar}
-                    <div className="name">{user.name}</div>
-                    <div>{user.signature}</div>
+                    {currUser.avatar}
+                    <div className="name">{currUser.name}</div>
+                    <div>{currUser.signature}</div>
                   </div>
                   <div className="detail">
                     <p>
                       <i className="job_title"/>
-                      {user.title}
+                      {currUser.title}
                     </p>
                     <p>
                       <i className="group"/>
-                      {user.group}
+                      {currUser.group}
                     </p>
                     <p>
                       <i className="address"/>
-                      {user.geographic.province.label}
-                      {user.geographic.city.label}
+                      {currUser.geographic.province.label}
+                      {currUser.geographic.city.label}
                     </p>
                   </div>
                   <Divider dashed/>
                   <div className="tags">
                     <div className="tagsTitle">Interests</div>
-                    {user.tags.concat(newTags).map(item => (
+                    {currUser.tags.concat(newTags).map(item => (
                       <Tag key={item.key}>{item.label}</Tag>
                     ))}
                   </div>
@@ -95,7 +92,7 @@ class Center extends PureComponent {
                     <div className="teamTitle">Social</div>
                     <Row gutter={36}>
                       <Row style={{ marginLeft: 20 }} lg={24} xl={12}>
-                        {avatars().map(item => (
+                        {avatars.map(item => (
                           <div key={item.id} style={{ width: 30, marginLeft: item.id === 1 ? 0 : 10, float: 'left' }}>
                             <a style={{ lineHeight: '.8em' }} href={item.href}>
                               {item.icon}
@@ -112,8 +109,8 @@ class Center extends PureComponent {
             </Card>
           </Col>
           <Divider orientation='center'
-                   type={this.state.width > 740 ? 'vertical' : 'horizontal'}
-                   className="main_divider"
+            type='vertical'
+            className="v_divider"
           />
           <Col lg={16} style={{ float: 'right', paddingLeft: 0 }}>
             <Card
@@ -133,4 +130,4 @@ class Center extends PureComponent {
   }
 }
 
-export default Center
+export default MainContent

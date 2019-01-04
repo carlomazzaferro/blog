@@ -4,18 +4,17 @@ import ArticleListContent from './content/Content'
 import './Articles.less'
 import Button from 'antd/es/button'
 import { maxArticles, sortedBlurbs } from '../../consts/blurbs/index'
+import { uuidv4 } from '../utils/utils'
 
 const articleCount = 3
 
 class Articles extends PureComponent {
   state = {
     count: articleCount,
-    data: [],
     list: [],
   }
 
   componentDidMount () {
-    console.log(sortedBlurbs(10))
     this.setState({
       count: articleCount,
       list: sortedBlurbs(articleCount),
@@ -31,11 +30,6 @@ class Articles extends PureComponent {
   }
 
   render () {
-    // const IconText = ({ type, text }) => (
-    //   <span>
-    //     <Icon type={type} style={{ marginRight: 8 }}/>
-    //     {text}
-    //   </span>)
     return (
       <div>
         <List
@@ -43,7 +37,6 @@ class Articles extends PureComponent {
           className='articleList'
           rowKey="id"
           itemLayout="vertical"
-          loadMore={this.onLoadMore}
           dataSource={this.state.list}
           renderItem={item => (
             <List.Item
@@ -64,12 +57,12 @@ class Articles extends PureComponent {
                 description={
                   <span>
                     {item.tags.map(i => (
-                      <Tag> { i } </Tag>
+                      <Tag key={uuidv4()}> { i } </Tag>
                     ))}
                   </span>
                 }
               />
-              <ArticleListContent data={item}/>
+              <ArticleListContent key={item.id} data={item}/>
             </List.Item>
 
           )}

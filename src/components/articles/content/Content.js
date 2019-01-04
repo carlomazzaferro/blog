@@ -6,7 +6,6 @@ const formattedDate = date => (
 )
 
 const ArticleListContent = ({ data: { blurb, updatedAt, avatar, icons, href } }) => {
-  console.log(updatedAt.toTimeString())
   return (
     <div className='listContent'>
       <div className='description'>{blurb}</div>

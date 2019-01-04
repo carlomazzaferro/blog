@@ -4,7 +4,6 @@ import styles from './footer.less'
 
 const GlobalFooter = ({ className, links, copyright }) => {
   const clsString = classNames('globalFooter', className)
-  console.log(links)
   return (
     <footer className={clsString}>
       {copyright && <div className={styles.copyright}>{copyright}</div>}
