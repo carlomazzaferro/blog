@@ -1,18 +1,5 @@
 import React from 'react'
 import { Avatar } from './components/image'
-import { graphql } from 'gatsby'
-
-export const query = graphql`
-  query {
-    fileName: file(relativePath: { eq: "assets/images/avatar.pn" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 250) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 const titles = [
   'Alipay',
@@ -66,7 +53,7 @@ const fakeList = count => {
   const list = []
   for (let i = 0; i < count; i += 1) {
     list.push({
-      id: `fake-list-${ i }`,
+      id: `fake-list-${i}`,
       title: titles[i % 8],
       avatar: avatars[i % 8],
       cover: parseInt(i / 4, 10) % 2 === 0 ? covers[i % 4] : covers[3 - (i % 4)],
@@ -174,57 +161,54 @@ const noticesData = () => {
   ])
 }
 
-const currUser = () => {
-  return (
-    {
-      name: 'Carlo Mazzaferro',
-      avatar: <Avatar/>,
-      userid: '00000001',
-      email: 'carlo.mazzaferron@gmail.com',
-      signature: 'My online presence, or whatever.',
-      title: 'Machine Learning Engineer',
-      group: 'ByteCubed, LLC',
-      tags: [
-        {
-          key: '0',
-          label: 'python',
-        },
-        {
-          key: '1',
-          label: 'machine learning',
-        },
-        {
-          key: '2',
-          label: 'haskell',
-        },
-        {
-          key: '3',
-          label: 'react',
-        },
-        {
-          key: '4',
-          label: 'distributed systems',
-        },
-        {
-          key: '5',
-          label: 'data viz',
-        },
-      ],
-      notifyCount: 12,
-      unreadCount: 11,
-      country: 'USA',
-      geographic: {
-        province: {
-          label: 'Washington, ',
-          key: '20001',
-        },
-        city: {
-          label: 'DC',
-          key: '330100',
-        },
+const currUser =
+  {
+    name: 'Carlo Mazzaferro',
+    avatar: <Avatar/>,
+    userid: '00000001',
+    email: 'carlo.mazzaferron@gmail.com',
+    signature: 'My online presence, or whatever.',
+    title: 'Machine Learning Engineer',
+    group: 'ByteCubed, LLC',
+    tags: [
+      {
+        key: '0',
+        label: 'python',
       },
-    }
-  )
-}
+      {
+        key: '1',
+        label: 'machine learning',
+      },
+      {
+        key: '2',
+        label: 'haskell',
+      },
+      {
+        key: '3',
+        label: 'react',
+      },
+      {
+        key: '4',
+        label: 'distributed systems',
+      },
+      {
+        key: '5',
+        label: 'data viz',
+      },
+    ],
+    notifyCount: 12,
+    unreadCount: 11,
+    country: 'USA',
+    geographic: {
+      province: {
+        label: 'Washington, ',
+        key: '20001',
+      },
+      city: {
+        label: 'DC',
+        key: '330100',
+      },
+    },
+  }
 
 export { noticesData, fakeList, currUser }

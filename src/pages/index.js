@@ -1,9 +1,9 @@
 import React from 'react'
 import SEO from '../components/seo'
-import Center from '../components/main/main'
+import MainContent from '../components/main/main'
 
 const IndexPage = () => (
-  <Center location={'articles'}>
+  <MainContent location={'articles'}>
     <SEO title="Home" keywords={['gatsby', 'application', 'react']}/>
 
     {/* <h1>Hi people</h1> */}
@@ -15,7 +15,7 @@ const IndexPage = () => (
     {/*<Link to="/page-2/">Go to page 2</Link>*/}
     {/*<Link to="/resume/">Resume</Link>*/}
     {/*<Link to="/home/">Resume</Link>*/}
-  </Center>
+  </MainContent>
 )
 
 export default IndexPage
