@@ -3,7 +3,7 @@ import { List, Tag } from 'antd'
 import ArticleListContent from './content/Content'
 import './Articles.less'
 import Button from 'antd/es/button'
-import { maxArticles, sortedBlurbs } from '../../consts/blurbs/index'
+import { maxArticles, sortedBlurbs } from '../../content'
 import { uuidv4 } from '../utils/utils'
 
 const articleCount = 3

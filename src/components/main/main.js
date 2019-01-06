@@ -3,13 +3,14 @@ import { Card, Col, Divider, Row, Tag } from 'antd'
 import GridContent from '../grid/GridContent'
 import './main.less'
 import { currUser } from '../../mocks'
-import { copyright } from '../../consts/footer'
 import Articles from '../../components/articles'
 import Projects from '../../components/projects/projects'
 import Technologies from '../../components/technologies/technologies'
-import { avatars } from '../../consts/social'
-import { operationTabList } from '../../consts/nav'
+import { avatars } from '../../content/social'
+import { operationTabList } from '../../content/common/nav'
 import GlobalFooter from '../footer/footer'
+
+const windowGlobal = typeof window !== 'undefined' && window
 
 class MainContent extends PureComponent {
   state = {
@@ -24,18 +25,6 @@ class MainContent extends PureComponent {
     this.setState({
       activeTab: key
     })
-  }
-  componentDidMount () {
-    this.handleWindowSizeChange() // Set width
-    window.addEventListener('resize', this.handleWindowSizeChange)
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.handleWindowSizeChange)
-  }
-
-  handleWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth })
   }
 
   renderTab = () => {
@@ -53,6 +42,14 @@ class MainContent extends PureComponent {
 
   render () {
     const { newTags } = this.state
+    const divider = () => {
+      if (windowGlobal.innerWidth > 740) {
+        return <Divider orientation='center'
+          type='vertical'
+          className="v_divider"
+        />
+      }
+    }
     return (
       <GridContent className="userCenter">
         <Row gutter={24}>
@@ -108,10 +105,7 @@ class MainContent extends PureComponent {
               )}
             </Card>
           </Col>
-          <Divider orientation='center'
-            type='vertical'
-            className="v_divider"
-          />
+          {divider()}
           <Col lg={16} style={{ float: 'right', paddingLeft: 0 }}>
             <Card
               className="tabsCard"
@@ -124,7 +118,7 @@ class MainContent extends PureComponent {
             </Card>
           </Col>
         </Row>
-        <GlobalFooter copyright={copyright}/>
+        <GlobalFooter/>
       </GridContent>
     )
   }

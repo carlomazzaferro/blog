@@ -3,7 +3,7 @@ import '../icons.less'
 import { Icon } from 'antd'
 
 const numpy = () => (
-  <svg version="1.1" id="Layer_1" width="25px" height="25px" viewBox="0 0 287.498 307.15"
+  <svg version="1.1" id="Layer_1" width="28px" height="28px" viewBox="0 0 287.498 307.15"
   >
     <switch>
       <g>

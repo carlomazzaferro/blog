@@ -34,15 +34,19 @@
 
   .cardItemContent {
     display: flex;
+    font-size: 10px;
     margin-top: 16px;
     margin-bottom: -4px;
     line-height: 20px;
     height: 20px;
+    .cardItemContentDate {
+      font-style: italic;
+    }
 
     & > span {
       color: @text-color-secondary;
       flex: 1;
-      font-size: 12px;
+      font-size: 8px;
     }
 
     .avatarList {
@@ -56,7 +60,7 @@
 
   :global {
     .ant-list .ant-list-item-content-single {
-      max-width: 800%;
+      max-width: 100%;
     }
   }
 }

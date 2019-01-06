@@ -1,16 +1,12 @@
 import React, { PureComponent } from 'react'
-import { Card, List, Menu } from 'antd'
+import { Card, List } from 'antd'
 import './technologies.less'
-import { technologies } from '../../consts/tech/technologies'
+import { technologies } from '../../content/index'
 import Button from 'antd/es/button'
 
 const articleCount = 9
 const allArts = technologies.sort((a, b) => a.LOC - b.LOC).reverse()
 const maxArticles = allArts.length
-
-// @connect(({ list }) => ({
-//   list,
-// }))
 
 class Technologies extends PureComponent {
   state = {
@@ -32,26 +28,17 @@ class Technologies extends PureComponent {
       list: allArts.slice(0, ct)
     })
   }
+
   render () {
-    const itemMenu = (
-      <Menu>
-        <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-            1st menu item
-          </a>
-        </Menu.Item>
-        <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-            2nd menu item
-          </a>
-        </Menu.Item>
-        <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-            3d menu item
-          </a>
-        </Menu.Item>
-      </Menu>
+    const Header = () => (
+      <div className="cardsHeader">
+        This information is mostly based on what has been gathered at <a href='https://sourcerer.io/carlomazzaferro'>
+        sourcerer.io
+        </a>, an application that gathers information from your commits and builds a visual profile from it.
+        It is mostly from my open-source contributions.
+      </div>
     )
+
     const CardInfo = ({ commits, loc }) => (
       <div className='cardInfo'>
         <div>
@@ -66,6 +53,7 @@ class Technologies extends PureComponent {
     )
     return (
       <div>
+        <Header/>
         <List
           rowKey="id"
           className='filterCardList'
@@ -76,20 +64,6 @@ class Technologies extends PureComponent {
               <Card
                 hoverable
                 bodyStyle={{ paddingBottom: 20 }}
-                // actions={[
-                //   <Tooltip title="Download">
-                //     <Icon type="download"/>
-                //   </Tooltip>,
-                //   <Tooltip title="编辑">
-                //     <Icon type="edit"/>
-                //   </Tooltip>,
-                //   <Tooltip title="Share">
-                //     <Icon type="share-alt"/>
-                //   </Tooltip>,
-                //   <Dropdown overlay={itemMenu}>
-                //     <Icon type="ellipsis"/>
-                //   </Dropdown>,
-                // ]}
               >
                 <Card.Meta avatar={item.i} title={item.name}
                 />

@@ -27,13 +27,13 @@ div.gatsby-image-wrapper {
 .v_divider {
   z-index: 2;
   margin-top: 65px;
-  height: 150vh;
-
-  @media screen and (max-width: 740px) {
-    height: 0px;
-    margin-top: 0px;
-    color: transparent;
-  }
+  height: 80vh;
+  //
+  //@media screen and (max-width: 740px) {
+  //  height: 0px;
+  //  margin-top: 0px;
+  //  color: transparent;
+  //}
 }
 
 
@@ -109,15 +109,19 @@ div.gatsby-image-wrapper {
 
 .tabsCard {
   width: 70%;
+
   @media screen and (max-width: 740px) {
-    width: 90%;
-    margin: auto;
+    width: calc(50vh + 10px);
 
   }
 
   :global {
     .ant-card-head {
       margin-top: 50px;
+      @media screen and (max-width: 740px) {
+        //margin-top: 10px;
+        margin: 0;
+      }
     }
   }
 
