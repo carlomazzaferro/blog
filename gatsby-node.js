@@ -12,3 +12,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   }
 }
+
+exports.onPreBootstrap = () => {
+  require('isomorphic-fetch')
+}
