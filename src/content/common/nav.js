@@ -1,11 +1,12 @@
 import React from 'react'
+import { maxArticles, maxProjs, maxTech } from '../'
 
 export const operationTabList = [
   {
     key: 'articles',
     tab: (
       <span>
-            Articles <span style={{ fontSize: 14 }}>(8)</span>
+            Articles <span style={{ fontSize: 14 }}>({maxArticles})</span>
       </span>
     ),
   },
@@ -13,7 +14,7 @@ export const operationTabList = [
     key: 'applications',
     tab: (
       <span>
-            Technologies <span style={{ fontSize: 14 }}>(8)</span>
+            Technologies <span style={{ fontSize: 14 }}>({maxTech})</span>
       </span>
     ),
   },
@@ -21,7 +22,7 @@ export const operationTabList = [
     key: 'projects',
     tab: (
       <span>
-            Projects <span style={{ fontSize: 14 }}>(8)</span>
+            Projects <span style={{ fontSize: 14 }}>({maxProjs})</span>
       </span>
     ),
   },

@@ -1,4 +1,4 @@
-import icos from './ico'
+import icos from '../common/ico'
 
 export const technologies = [
   { ...icos.python, commits: 684, LOC: 43430 },
@@ -15,6 +15,6 @@ export const technologies = [
   { ...icos.sklearn, commits: 312, LOC: 715 },
   { ...icos.spacy, commits: 52, LOC: 1261 },
   { ...icos.flask, commits: 291, LOC: 446 },
-  { ...icos.pytest, commits: 1427, LOC: 217 },
+  { ...icos.pytest, commits: 427, LOC: 1217 },
 
 ]

@@ -1,4 +1,4 @@
-import icos from '../tech/ico'
+import icos from '../common/ico'
 
 export const blurbs =
   [
