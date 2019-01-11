@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react'
 import { Card, Col, Divider, Row, Tag } from 'antd'
 import GridContent from '../grid/GridContent'
 import './main.less'
-import { currUser } from '../../mocks'
+import { currUser } from '../../content/common/user'
 import Articles from '../../components/articles'
 import Projects from '../../components/projects/projects'
 import Technologies from '../../components/technologies/technologies'
 import { avatars } from '../../content/social'
+import { Link } from 'gatsby'
 import { operationTabList } from '../../content/common/nav'
 import GlobalFooter from '../footer/footer'
 
@@ -29,14 +30,14 @@ class MainContent extends PureComponent {
 
   renderTab = () => {
     switch (this.state.activeTab) {
-    case 'articles':
-      return <Articles/>
-    case 'applications':
-      return <Technologies/>
-    case 'projects':
-      return <Projects/>
-    default:
-      return <Articles/>
+      case 'articles':
+        return <Articles/>
+      case 'applications':
+        return <Technologies/>
+      case 'projects':
+        return <Projects/>
+      default:
+        return <Articles/>
     }
   }
 
@@ -45,8 +46,8 @@ class MainContent extends PureComponent {
     const divider = () => {
       if (windowGlobal.innerWidth > 740) {
         return <Divider orientation='center'
-          type='vertical'
-          className="v_divider"
+                        type='vertical'
+                        className="v_divider"
         />
       }
     }
@@ -96,6 +97,23 @@ class MainContent extends PureComponent {
                             </a>
                           </div>
                         ))}
+                      </Row>
+                    </Row>
+                  </div>
+                  <Divider style={{ marginTop: 0 }} dashed/>
+                  <div className="team">
+                    <div className="teamTitle">Resume</div>
+                    <Row gutter={36}>
+                      <Row style={{ marginLeft: 20 }} lg={24} xl={12}>
+                        <div style={{ width: 40, marginLeft: 0, float: 'left' }}>
+                          <Link to={'/resume/'}> Blurb </Link>
+                        </div>
+                        <Divider type='vertical' style={{ float: 'left', height: 20 }}/>
+                        <div style={{ width: 30, marginLeft: 6, float: 'left' }}>
+                          <a href='https://s3.amazonaws.com/personal-website-resume/Simple_Resume_CV.pdf'>
+                            PDF
+                          </a>
+                        </div>
                       </Row>
                     </Row>
                   </div>
