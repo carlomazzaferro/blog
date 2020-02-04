@@ -8,7 +8,7 @@ export const blurbs =
       blurb: 'The application of neural networks to the problem of predicting how well proteins bind to the MHC-I complex. ' +
         'This sort of interaction stands at the basis of the bodily immunogenic response and accurately characterizing it ' +
         'could have significant impacts on the drug-development process.',
-      href: 'mazzafi.sh/articles/mhcPreds',
+      href: 'mazzafer.ro/articles/mhcPreds',
       tags: ['Neural Networks', 'Deep Learning', 'Bioinformatics', 'Precision Medicine'],
       updatedAt: new Date(2017, 2, 3),
       createdAt: new Date(2017, 2, 3),
@@ -26,7 +26,7 @@ export const blurbs =
         'Bioengineering Biosystems major. This is just a brief summary of a much longer project proposal where I focus ' +
         'more on the implementation part of our project rather than the (necessary, albeit dull) logistical and ' +
         'motivational aspects of the project.',
-      href: 'mazzafi.sh/articles/bmes_one',
+      href: 'mazzafer.ro/articles/bmes_one',
       tags: ['Bioengineering', 'Psychology', 'Statistics'],
       updatedAt: new Date(2016, 11, 3),
       createdAt: new Date(2016, 11, 3),
@@ -39,7 +39,7 @@ export const blurbs =
       id: 3,
       title: 'Wearable Monitoring Device For Future Applications As An Assistive Technology',
       blurb: 'Project developed with the Biomedical Engineering Society at UCSD.',
-      href: 'mazzafi.sh/articles/bmes_one',
+      href: 'mazzafer.ro/articles/bmes_one',
       tags: ['Bioengineering', 'Psychology', 'Statistics'],
       updatedAt: new Date(2015, 7, 11),
       createdAt: new Date(2015, 7, 11),
@@ -56,7 +56,7 @@ export const blurbs =
         'product advertisements. The impact of nicotine replacement therapeutics (NRT) on quitting success in the US ' +
         'population remains unclear. Understanding of advertising messages and product features is needed to better ' +
         'understand the impact of cessation products on quitting in the US.',
-      href: 'mazzafi.sh/articles/acsm_one',
+      href: 'mazzafer.ro/articles/acsm_one',
       tags: ['Bioengineering', 'Psychology', 'Statistics'],
       updatedAt: new Date(2014, 6, 15),
       createdAt: new Date(2014, 6, 15),
@@ -71,7 +71,7 @@ export const blurbs =
       title: 'Relationship Between Tobacco Smoking Curiosity and Levels of Physical Activity and Sedentary Behavior in Adolescence',
       blurb: 'Low physical activity (PA), sedentary behavior (SB), and tobacco use are three behavioral risk factors ' +
         'linked to poor long-term health outcomes, and they tend to cluster together in individuals. Expressing any curiosity about smoking predicts future risk of tobacco use among adolescents who have never smoked.',
-      href: 'mazzafi.sh/articles/acsm_two',
+      href: 'mazzafer.ro/articles/acsm_two',
       tags: ['Bioengineering', 'Psychology', 'Statistics'],
       updatedAt: new Date(2014, 9, 11),
       createdAt: new Date(2014, 9, 11),
