@@ -2,7 +2,8 @@ import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 import { fetchLastCommit } from '../../../components/utils/gh'
-import { testing } from '../index'
+
+let testing = true
 
 const Racket = () => {
   return (

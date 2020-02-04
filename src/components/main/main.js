@@ -30,14 +30,14 @@ class MainContent extends PureComponent {
 
   renderTab = () => {
     switch (this.state.activeTab) {
-      case 'articles':
-        return <Articles/>
-      case 'applications':
-        return <Technologies/>
-      case 'projects':
-        return <Projects/>
-      default:
-        return <Articles/>
+    case 'articles':
+      return <Articles/>
+    case 'applications':
+      return <Technologies/>
+    case 'projects':
+      return <Projects/>
+    default:
+      return <Articles/>
     }
   }
 
@@ -46,8 +46,8 @@ class MainContent extends PureComponent {
     const divider = () => {
       if (windowGlobal.innerWidth > 740) {
         return <Divider orientation='center'
-                        type='vertical'
-                        className="v_divider"
+          type='vertical'
+          className="v_divider"
         />
       }
     }
