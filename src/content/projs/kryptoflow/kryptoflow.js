@@ -25,8 +25,6 @@ const Kryproflow = () => {
   )
 }
 
-// let testing = true
-
 export const kryproflow = {
   title: 'kryproflow',
   cover: <Kryproflow/>,
