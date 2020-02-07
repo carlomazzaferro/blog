@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import React from 'react'
 import { fetchLastCommit } from '../../../components/utils/gh'
 
-let testing = true
+let testing = false
 
 const Kryproflow = () => {
   return (

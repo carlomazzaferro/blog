@@ -9,7 +9,7 @@ const currUser =
     email: 'carlo.mazzaferron@gmail.com',
     signature: 'My online presence, or whatever.',
     title: 'Machine Learning Engineer',
-    group: 'ByteCubed, LLC',
+    group: 'Circ (Acquired by Bird)',
     tags: [
       {
         key: '0',
@@ -21,7 +21,7 @@ const currUser =
       },
       {
         key: '2',
-        label: 'haskell',
+        label: 'web',
       },
       {
         key: '3',
@@ -38,14 +38,14 @@ const currUser =
     ],
     notifyCount: 12,
     unreadCount: 11,
-    country: 'USA',
+    country: 'DE',
     geographic: {
       province: {
-        label: 'Washington, ',
-        key: '20001',
+        label: 'Berlin, ',
+        key: '10405',
       },
       city: {
-        label: 'DC',
+        label: 'DE',
         key: '330100',
       },
     },

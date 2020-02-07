@@ -20,36 +20,41 @@ const resume = () => (
       <h3 className="header_three">Career History</h3>
 
       <div className='position'>
+        <span className='title'>Software Engineer (Machine Learning) - Circ (Acquired by <a href="http://bird.co">Bird</a>)</span>
+        <span className='time-period'>July 2019 to Present - Berlin, DE</span>
+      </div>
+
+      <div className='position'>
         <span className='title'>Machine Learning Engineer - ByteCubed</span>
-        <span className='time-period'>November 2018 to Present</span>
+        <span className='time-period'>November 2018 to July 2019 - Washington, DC, USA</span>
       </div>
 
       <div className='position'>
         <span className='title'>Junior Data Scientist - ByteCubed</span>
-        <span className='time-period'>August 2017 to November 2018</span>
+        <span className='time-period'>August 2017 to November 2018 - Washington, DC, USA</span>
       </div>
 
       <div className='position'>
         <span className='title'>Data Science Intern - ByteCubed</span>
-        <span className='time-period'>June 2017 to August 2017</span>
+        <span className='time-period'>June 2017 to August 2017 - Washington, DC, USA</span>
       </div>
 
       <div className='position'>
         <span
           className='title'>Software Engineering Co-op - Center for Computational Biology and Bioinformatics, UCSD</span>
-        <span className='time-period'>February 2016 to June 2017</span>
+        <span className='time-period'>February 2016 to June 2017 - San Diego, CA, USA</span>
       </div>
 
       <h3 className="header_three">Internships</h3>
 
       <div className='internship'>
         <span className='title'>Application Developer Intern - UCSD Medical </span>
-        <span className='time-period'>June 2015 to October 2015</span>
+        <span className='time-period'>June 2015 to October 2015 - San Diego, CA, USA</span>
       </div>
 
       <div className='internship'>
         <span className='title'>Data Analysis Intern - The Scripps Research Institute (TSRI)</span>
-        <span className='time-period'>June 2014 to October 2014</span>
+        <span className='time-period'>June 2014 to October 2014 - San Diego, CA, USA</span>
       </div>
 
       <h3 className="header_three">Education</h3>
