@@ -7,7 +7,7 @@
 </h1>
 
 Personal website, mostly for jotting down notes, keeping track of dead projects, and learn react. 
-Check it out at [mazzafer.ro](https://mazzafer.ro)
+Check it out at [mazzaferr.ro](https://mazzaferr.ro)
  
 ## Info
 
